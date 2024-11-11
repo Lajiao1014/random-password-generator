@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontSize: {
+        '48px': '48px', // 自定義字體大小
+      },
     },
   },
   plugins: [],
