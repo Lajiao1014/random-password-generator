@@ -17,11 +17,11 @@ const CheckBoxs = () => {
     };
 
     return <>
-        <div className="flex">
-            <div className="used text-20px">
-                <div>Characters used:</div>
+        <div className="flex w-full items-center justify-between">
+            <div className="used text-[20px] flex flex-col">
+                <div>Characters</div><div>used:</div>
             </div>
-            <div className="checkbox flex  gap-2">
+            <div className="checkbox flex gap-8 mr-[40px] text-[20px]">
                 {options.map((option, index) => (
                     <CheckBox
                         key={index}

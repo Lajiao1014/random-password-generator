@@ -18,12 +18,9 @@ export default function Home() {
           <div className="flex justify-center ">
             <img src="/town.svg" className="w-[400px] h-[400px]" />
             <div className="flex justify-around items-center flex-col h-[350px]">
-
               <Password />
               <Sidebar />
-              <div >
-                <CheckBoxs />
-              </div>
+              <CheckBoxs />
             </div>
           </div>
         </div>

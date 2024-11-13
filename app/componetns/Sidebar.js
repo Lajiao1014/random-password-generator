@@ -12,14 +12,14 @@ const Sidebar = () => {
     };
 
     return <>
-        <div className="flex items-center justify-between bg-[#f7f0f0] w-[500px]">
+        <div className="flex items-center  bg-[#f7f0f0] w-[500px]">
             <div className="text-[20px] flex flex-col">
                 Password length: <span>{value}</span>
             </div>
-            <div className="flex items-center gap-4 flex-1">
+            <div className="flex items-center justify-between h-[50px] w-[450px] gap-4">
                 <FeatherIcon
                     icon="minus-circle"
-                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-6 h-6"
+                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-8 h-8 mt-[10px] t"
                     onClick={() => handleSliderChange(Math.max(1, value - 1))}
                 />
                 <div className="flex-1">
@@ -53,7 +53,7 @@ const Sidebar = () => {
                 </div>
                 <FeatherIcon
                     icon="plus-circle"
-                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-6 h-6"
+                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-8 h-8 mt-[10px]"
                     onClick={() => handleSliderChange(Math.min(50, value + 1))}
                 />
             </div>
