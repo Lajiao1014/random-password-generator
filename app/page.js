@@ -16,8 +16,8 @@ export default function Home() {
             Create strong and secure passwords to keep your account safe online.
           </div>
           <div className="flex justify-center ">
-            <img src="/town.svg" className="w-[350px] h-[350px]" />
-            <div className="flex justify-around items-center flex-col h-[300px]">
+            <img src="/town.svg" className="w-[400px] h-[400px]" />
+            <div className="flex justify-around items-center flex-col h-[350px]">
 
               <Password />
               <Sidebar />

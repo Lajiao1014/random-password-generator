@@ -1,23 +1,64 @@
 'use client'
+import { useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import FeatherIcon from 'feather-icons-react';
 
 const Sidebar = () => {
+    const [value, setValue] = useState(12);
 
-    const a = 1
-
+    const handleSliderChange = (newValue) => {
+        setValue(newValue);
+    };
 
     return <>
-        <div className="flex items-center justify-between bg-[#f7f0f0] w-[400px] ">
-            <div>Password length:{a}</div>
-            <i className='bx bxs-minus-circle'></i>
-            <FeatherIcon icon="minus-circle" className="minus-circle" />
-            <Slider />
-            <FeatherIcon icon="plus-circle" className="minus-circle" />
+        <div className="flex items-center justify-between bg-[#f7f0f0] w-[500px]">
+            <div className="text-[20px] flex flex-col">
+                Password length: <span>{value}</span>
+            </div>
+            <div className="flex items-center gap-4 flex-1">
+                <FeatherIcon
+                    icon="minus-circle"
+                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-6 h-6"
+                    onClick={() => handleSliderChange(Math.max(1, value - 1))}
+                />
+                <div className="flex-1">
+                    <Slider
+                        min={1}
+                        max={50}
+                        value={value}
+                        onChange={handleSliderChange}
+                        railStyle={{
+                            backgroundColor: '#e2e2e2',
+                            height: 15,
+                            borderRadius: 10
+                        }}
+                        trackStyle={{
+                            backgroundColor: '#3b82f6',
+                            height: 15,
+                            borderRadius: 10
+                        }}
+                        handleStyle={{
+                            borderColor: '#3b82f6',
+                            height: 25,
+                            width: 25,
+                            marginTop: -5,
+                            backgroundColor: '#fff',
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                            border: '2px solid #3b82f6',
+                            opacity: 1,
+                            cursor: 'pointer'
+                        }}
+                    />
+                </div>
+                <FeatherIcon
+                    icon="plus-circle"
+                    className="cursor-pointer text-blue-600 hover:text-blue-700 transition-colors w-6 h-6"
+                    onClick={() => handleSliderChange(Math.min(50, value + 1))}
+                />
+            </div>
         </div>
     </>
 }
-
 
 export default Sidebar
